@@ -4,131 +4,406 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Khaiser Banu | Professional Portfolio</title>
+  <title>Khaiser Banu | Quality Assurance & Digital Portfolio</title>
 
   <meta name="description"
-        content="Professional portfolio of Khaiser Banu — Quality Assurance professional and independent digital project contributor.">
+        content="Professional portfolio of Khaiser Banu, Senior QA Engineer with 15+ years of experience in software quality, test automation, API and performance testing, with selected independent digital projects.">
 
   <style>
+    :root {
+      --ink: #142033;
+      --text: #536078;
+      --muted: #758196;
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --line: #e5eaf0;
+      --accent: #176b5b;
+      --accent-soft: #eaf5f2;
+      --max: 1120px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fb;
-      color: #172033;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(var(--max), 90%);
       margin: auto;
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e7eaf0;
-      padding: 22px 0;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav {
+      min-height: 74px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .name {
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-
-    nav a {
-      color: #172033;
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
       text-decoration: none;
-      margin-left: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
     .hero {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 0;
+      padding: 105px 0 95px;
     }
 
     .eyebrow {
-      font-weight: 700;
-      margin-bottom: 15px;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      line-height: 1.05;
-      max-width: 850px;
-      margin-bottom: 25px;
-    }
-
-    .intro {
-      max-width: 700px;
-      font-size: 1.15rem;
-      color: #536078;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 2rem;
+      max-width: 930px;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
       margin-bottom: 30px;
     }
 
-    .card {
-      background: #ffffff;
-      border: 1px solid #e7eaf0;
-      border-radius: 16px;
-      padding: 30px;
+    .hero-intro {
+      max-width: 760px;
+      font-size: 1.2rem;
+      color: var(--text);
     }
 
-    .project-label {
-      font-size: 0.9rem;
-      font-weight: 700;
+    .hero-meta {
+      margin-top: 35px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+
+    .section-copy {
+      color: var(--text);
+      max-width: 760px;
+      margin-top: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 30px;
+    }
+
     .card h3 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
     .card p {
-      color: #536078;
-      max-width: 750px;
+      color: var(--text);
+    }
+
+    .experience {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 38px;
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .company {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      color: var(--text);
+      margin-top: 4px;
+    }
+
+    .date {
+      color: var(--muted);
+      white-space: nowrap;
+      font-size: 0.92rem;
+    }
+
+    .experience ul {
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .experience li {
+      margin-bottom: 10px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: var(--accent-soft);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .project {
+      background: var(--ink);
+      color: white;
+      border-radius: 24px;
+      padding: 42px;
+    }
+
+    .project-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9dd5c9;
+      margin-bottom: 12px;
+    }
+
+    .project h3 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+      letter-spacing: -0.03em;
+    }
+
+    .project p {
+      color: #c9d2df;
+      max-width: 780px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .project-item {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      padding: 18px;
+      color: #dbe3ec;
+      font-size: 0.9rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 28px;
+      background: white;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .credential {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .credential small {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .credential h3 {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .credential p {
+      color: var(--text);
+      margin-top: 7px;
+      font-size: 0.92rem;
+    }
+
+    .connect-box {
+      background: var(--accent-soft);
+      border-radius: 22px;
+      padding: 38px;
+    }
+
+    .connect-box p {
+      color: var(--text);
+      max-width: 700px;
+      margin: 12px 0 24px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button.secondary {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
     }
 
     footer {
-      border-top: 1px solid #e7eaf0;
-      padding: 30px 0;
-      color: #667085;
+      border-top: 1px solid var(--line);
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
+        padding: 18px 0;
       }
 
-      nav a {
-        margin-left: 0;
-        margin-right: 15px;
+      .nav-links {
+        gap: 14px;
       }
 
       .hero {
-        min-height: auto;
-        padding: 70px 0;
+        padding: 75px 0;
+      }
+
+      .grid,
+      .stats,
+      .project-grid,
+      .credentials {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-top {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .project,
+      .experience,
+      .connect-box {
+        padding: 27px;
       }
     }
   </style>
@@ -136,91 +411,305 @@
 
 <body>
 
-  <header>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#top">Khaiser Banu</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
     <div class="container">
-      <nav>
-        <div class="name">Khaiser Banu</div>
+      <p class="eyebrow">Quality Engineering • Digital Delivery</p>
 
-        <div>
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+      <h1>
+        Quality-first thinking for reliable digital experiences.
+      </h1>
+
+      <p class="hero-intro">
+        I'm Khaiser Banu, a Senior QA Engineer with 15+ years of experience
+        delivering quality for enterprise applications, alongside selected
+        independent digital and web project work.
+      </p>
+
+      <div class="hero-meta">
+        <span class="pill">15+ Years in QA</span>
+        <span class="pill">Automation & API Testing</span>
+        <span class="pill">Performance Testing</span>
+        <span class="pill">Independent Digital Projects</span>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
+  <section id="about">
+    <div class="container">
 
-    <section class="hero">
-      <div class="container">
-        <p class="eyebrow">QUALITY • DIGITAL • WEB</p>
+      <div class="section-head">
+        <p class="section-kicker">About</p>
+        <h2>Quality beyond test execution.</h2>
 
-        <h1>
-          Building reliable digital experiences with a quality-first mindset.
-        </h1>
-
-        <p class="intro">
-          I'm Khaiser Banu, a Quality Assurance professional with experience
-          across software quality, testing and digital project implementation.
-          This portfolio presents selected professional and independent work.
+        <p class="section-copy">
+          My background spans test strategy, manual and automated testing,
+          API validation, performance testing, defect management and release
+          validation for enterprise applications. I bring the same structured,
+          quality-focused approach to independent digital projects — considering
+          usability, responsive behaviour, performance and discoverability as
+          parts of the complete user experience.
         </p>
       </div>
-    </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-
-        <div class="card">
-          <p>
-            My professional background is rooted in software quality assurance,
-            with an emphasis on reliability, usability and structured delivery.
-            I also apply that quality-first approach to independent digital and
-            web projects.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="container">
-        <h2 class="section-title">Selected Work</h2>
-
-        <div class="card">
-          <p class="project-label">FEATURED INDEPENDENT PROJECT</p>
-
-          <h3>Prime Services</h3>
-
-          <p>
-            Website planning, design implementation, responsive experience,
-            quality assurance, performance optimisation and digital
-            discoverability work for Prime Services, Bengaluru.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <h2 class="section-title">Connect</h2>
-
-        <div class="card">
-          <p>
-            Professional links and selected project information will be
-            available here.
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Khaiser Banu. Professional Portfolio.
     </div>
-  </footer>
+  </section>
+
+  <section id="expertise">
+    <div class="container">
+
+      <div class="section-head">
+        <p class="section-kicker">Expertise</p>
+        <h2>Core capabilities.</h2>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <h3>QA Strategy & Leadership</h3>
+          <p>
+            Test planning, execution, defect management, release readiness,
+            QA coordination and mentoring.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Functional & End-to-End Quality</h3>
+          <p>
+            Functional, regression, SIT, UAT, production validation and
+            end-to-end testing across enterprise applications.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Automation & API</h3>
+          <p>
+            Playwright with JavaScript, API automation, Postman, Swagger,
+            REST API validation and JSON assertions.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Performance & Reliability</h3>
+          <p>
+            JMeter performance testing with focus on scalability, reliability
+            and early identification of quality risks.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-head">
+        <p class="section-kicker">Experience</p>
+        <h2>Enterprise quality engineering.</h2>
+      </div>
+
+      <article class="experience">
+
+        <div class="experience-top">
+          <div>
+            <div class="company">Fidelity Investments</div>
+            <div class="role">Senior QA Engineer • Bengaluru, India</div>
+          </div>
+
+          <div class="date">April 2010 — August 2025</div>
+        </div>
+
+        <ul>
+          <li>
+            Led end-to-end QA activities for enterprise pension and insurance
+            applications, including planning, execution, defect triage and
+            release validation.
+          </li>
+
+          <li>
+            Defined test strategies covering functional, regression, API,
+            system integration and user acceptance testing.
+          </li>
+
+          <li>
+            Developed reusable Playwright JavaScript automation and supported
+            API automation to strengthen regression coverage.
+          </li>
+
+          <li>
+            Performed REST API validation using Postman, Swagger and JSON
+            assertions, and JMeter performance testing for scalability and
+            reliability.
+          </li>
+
+          <li>
+            Coordinated QA activities, mentored a three-person QA team and
+            partnered with Product, Development and Business stakeholders
+            across global teams.
+          </li>
+        </ul>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>15%</strong>
+            <span>Platform reliability improvement through early defect detection</span>
+          </div>
+
+          <div class="stat">
+            <strong>20%</strong>
+            <span>Reduction in production defects through stronger regression coverage</span>
+          </div>
+
+          <div class="stat">
+            <strong>25%</strong>
+            <span>QA efficiency improvement through reusable automation frameworks</span>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-head">
+        <p class="section-kicker">Selected Work</p>
+        <h2>Independent digital project.</h2>
+
+        <p class="section-copy">
+          Selected work outside my enterprise QA career, applying structured
+          quality practices to real-world digital delivery.
+        </p>
+      </div>
+
+      <article class="project">
+
+        <p class="project-label">Featured Independent Project</p>
+
+        <h3>Prime Services</h3>
+
+        <p>
+          An end-to-end website and digital presence project for Prime Services,
+          Bengaluru. My contribution spans website planning and implementation,
+          responsive experience, quality assurance, performance optimisation
+          and digital discoverability.
+        </p>
+
+        <div class="project-grid">
+          <div class="project-item">Responsive web implementation</div>
+          <div class="project-item">Desktop & mobile quality validation</div>
+          <div class="project-item">Performance optimisation</div>
+          <div class="project-item">Accessibility considerations</div>
+          <div class="project-item">SEO & discoverability implementation</div>
+          <div class="project-item">Production readiness & regression QA</div>
+        </div>
+
+        <a class="project-link"
+           href="https://www.primeblr.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Prime Services Website ↗
+        </a>
+
+      </article>
+
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="container">
+
+      <div class="section-head">
+        <p class="section-kicker">Credentials</p>
+        <h2>Education & certifications.</h2>
+      </div>
+
+      <div class="credentials">
+
+        <article class="credential">
+          <small>Certification</small>
+          <h3>ISTQB Foundation Level</h3>
+          <p>Software testing foundation certification.</p>
+        </article>
+
+        <article class="credential">
+          <small>Certification</small>
+          <h3>Professional Scrum Master I</h3>
+          <p>Scrum.org • 2023</p>
+        </article>
+
+        <article class="credential">
+          <small>Education</small>
+          <h3>Bachelor of Science in Computer Science</h3>
+          <p>Al-Ameen College • Bengaluru, India</p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="connect">
+    <div class="container">
+
+      <div class="connect-box">
+        <p class="section-kicker">Connect</p>
+
+        <h2>Professional links.</h2>
+
+        <p>
+          Explore my GitHub profile or view the featured Prime Services
+          project. Additional professional work and automation projects
+          will be added to this portfolio over time.
+        </p>
+
+        <a class="button"
+           href="https://github.com/KhaiserBanu"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub Profile ↗
+        </a>
+
+        <a class="button secondary"
+           href="https://www.primeblr.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Featured Project ↗
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Khaiser Banu • Professional Portfolio
+  </div>
+</footer>
 
 </body>
 </html>
